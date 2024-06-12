@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Performance Predictor </title>
+    <link rel="stylesheet" href="{{url_for('static' , filename = 'styles.css')}}">
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Student Performance Predictor</h2>
+        <form action="/predict" method="post">
+           
+                <div class="form-group">
+                    <input type="text" name="name" required="">
+                    <label>Name</label>
+                </div>
+                
+            <div class="bmi-child">
+                <div class="form-group">
+                    <input type="number" name="Hours Studied" required="">
+                    <label>Hours Studied</label>
+                </div>
+                <div class="form-group">
+                    <input type="number" name="Sleep Hours" required="">
+                    <label>Sleep Hours</label>
+                </div>
+            </div>
+
+          
+
+            <div class="name-age">
+                <div class="form-group">
+                    <input type="number" name="Previous Scores" required="">
+                    <label>Previous Scores</label>
+                </div>
+                <div class="form-group"> 
+                    <input type="number" name="Sample Question Papers Practiced" required="">
+                    <label>Question Papers Practiced</label>
+                </div> 
+            </div>
+
+
+                <div class="grid-item temp">
+                    <label>Extracurricular Activities</label>
+                </div>
+                <div class="grid-item">
+
+                    <div class="grid-container">
+                        <div class="grid-item">
+                            <div class="radio-group">
+                                <input type="radio" id="yes" name="Extracurricular Activities" value="yes" required>
+                                <label for="yes" class="t4">Yes</label>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="radio-group">
+                                <input type="radio" id="no" name="Extracurricular Activities" value="no" required>
+                                <label for="no" class="t4">No</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="submit-reset">
+                    <div>
+                        <button type="submit" class="btn">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Predict
+                        </button>
+        
+                    </div>
+                    <div>
+                          <a href="/">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            RESET
+                          </a>
+                    </div>
+                </div>
+                
+
+            <div class="output">
+                <h2>{{title}} {{prediction}}</h2>
+            </div>
+        </form>
+    </div>
+
+
+</body>
+
+</html>
